@@ -50,6 +50,13 @@ app.use(function (req, res, next) {
   next();
 });
 
+// error page
+app.use(function (err, req, res, next) {
+  res.render('error', {
+    error: err
+  });
+});
+
 // 路由
 routes(app);
 
